@@ -1,0 +1,8 @@
+{
+  "type": "pwa-node",
+  "request": "launch",
+  "name": "Debug Built App",
+  "program": "${workspaceFolder}/dist/server.js",
+  "preLaunchTask": "tsc: build - tsconfig.json",
+  "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+}

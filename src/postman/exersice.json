@@ -1,0 +1,112 @@
+{
+    "info": {
+        "name": "Fitness Tracker - Exercises",
+        "_postman_id": "a1e9fc2b-fitness-tracker-exercises",
+        "description": "Endpoints for managing exercise definitions",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create Exercise",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3000/api/exercises",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "api",
+                        "exercises"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"Incline Bench Press\",\n  \"category\": \"Chest\",\n  \"description\": \"Targets upper pecs with an incline angle.\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Get All Exercises (User + Shared)",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3000/api/exercises",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "api",
+                        "exercises"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Exercise",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3000/api/exercises/{{exerciseId}}",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "api",
+                        "exercises",
+                        "{{exerciseId}}"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"Flat Bench Press\",\n  \"category\": \"Chest\",\n  \"description\": \"Updated name and detail.\"\n}"
+                }
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "token",
+            "value": "your_jwt_token_here"
+        },
+        {
+            "key": "exerciseId",
+            "value": "replace_with_exercise_id"
+        }
+    ]
+}
